@@ -92,4 +92,4 @@ KEYREPO=<path/to/the/shared/ssh/key/folder> \
 ./run_multinode.sh
 ```
 
-`run_multinode.sh` handles the ssh authentication configurations to enable `horovodrun` passwordless-ssh between each docker containers. It does so by mounting `./key_repo` to the docker container and exchaning public keys in that folder. Concretely, one must ensure that `./key_repo/authorized_keys` and `./key_repo/known_hosts` files exist.
+`run_multinode.sh` handles the ssh authentication configurations to enable `horovodrun` passwordless-ssh between each docker containers. It does so by mounting `./key_repo` to the docker container and exchanging public keys in that folder. Concretely, one must ensure that `./key_repo/authorized_keys` and `./key_repo/known_hosts` files exist.
