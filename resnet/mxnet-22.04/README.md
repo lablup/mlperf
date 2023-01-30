@@ -68,7 +68,8 @@ LOGDIR="path/to/logging/files" \
 ```
 
 ## Running Multi-node
-**Please note that the uploaded code is NOT properly tested for multi-node, hence requires caution to those attempting to run the multinode benchmark**
+**Please note that the uploaded code is NOT properly tested for multi-node, hence requires caution to those attempting to run the multinode benchmark.**
+
 `run_multinode.sh` populates multiple docker containers using `image_classification` in a same docker network and tries to emulate the multi-node configuration.
 First, build the image:
 ```
