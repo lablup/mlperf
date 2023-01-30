@@ -2,6 +2,7 @@
 
 set -euxo pipefail
 
+: "${CONT:? CONT is not set}"
 : "${DATADIR:? DATADIR is not set}"
 : "${LOGDIR:? LOGDIR is not set}"
 
@@ -16,7 +17,7 @@ nvidia-docker run --rm --init --detach \
     --volume=${DATADIR}:/data \
     --volume=${LOGDIR}:/results   \
     -p 2022:22 \
-    mlperf-nvidia:image_classification sleep infinity
+    ${CONT} sleep infinity
 
 docker exec image_classification bash -c "chmod +x config_DGXA100.sh; source config_DGXA100.sh; mpirun --allow-run-as-root --bind-to none --np 2 ./run_and_time.sh"
 
