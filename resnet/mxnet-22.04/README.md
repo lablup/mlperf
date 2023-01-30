@@ -61,7 +61,10 @@ docker build -t mlperf-nvidia:image_classification .
 
 And then, run
 ```
-source run_singlenode.sh
+CONT=<name of the container> \
+DATADIR="path/to/the/dataset" \
+LOGDIR="path/to/logging/files" \
+./run_singlenode.sh
 ```
 
 ## Running Multi-node
