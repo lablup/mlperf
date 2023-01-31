@@ -70,7 +70,7 @@ LOGDIR="path/to/logging/files" \
 ## Running Multi-node
 **Please note that the uploaded code is NOT properly tested for multi-node, hence requires caution for those attempting to run the multinode benchmark.**
 
-`run_multinode.sh` populates multiple docker containers using `image_classification` in a same docker network and tries to emulate the multi-node configuration.
+`run_multinode.sh` populates multiple docker containers using `image_classification` image in a same docker network and emulates the multi-node configuration.
 First, build the image:
 ```
 docker build -t mlperf-nvidia:image_classification .
@@ -93,4 +93,4 @@ KEYREPO=<path/to/the/shared/ssh/key/folder> \
 ./run_multinode.sh
 ```
 
-`run_multinode.sh` handles the ssh authentication configurations to enable `horovodrun` passwordless-ssh between each docker containers. It does so by mounting `./key_repo` to the docker container and exchanging public keys in that folder. Concretely, one must ensure that `./key_repo/authorized_keys` and `./key_repo/known_hosts` files exist.
+`run_multinode.sh` handles the ssh authentication configurations to enable `horovodrun` passwordless ssh between each docker containers. It does so by mounting `./key_repo` to the docker container and exchanging public keys in that folder. Concretely, one must ensure that `./key_repo/authorized_keys` and `./key_repo/known_hosts` files exist.
